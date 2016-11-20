@@ -1,0 +1,27 @@
+usage: capture_chessboards [-h] [--rows ROWS] [--columns COLUMNS]
+                           [--square-size SQUARE_SIZE]
+                           [--calibration-folder CALIBRATION_FOLDER]
+                           left right num_pictures output_folder
+ 
+Take a number of pictures with a stereo camera in which a chessboard is
+visible to both cameras. The program waits until a chessboard is detected in
+both camera frames. The pictures are then saved to a file in the specified
+output folder. After five seconds, the cameras are rescanned to find another
+chessboard perspective. This continues until the specified number of pictures
+has been taken.
+ 
+positional arguments:
+  left                  Device numbers for the left camera.
+  right                 Device numbers for the right camera.
+  num_pictures          Number of valid chessboard pictures that should be
+                        taken.
+  output_folder         Folder to save the images to.
+ 
+optional arguments:
+  -h, --help            show this help message and exit
+  --rows ROWS           Number of inside corners in the chessboard's rows.
+  --columns COLUMNS     Number of inside corners in the chessboard's columns.
+  --square-size SQUARE_SIZE
+                        Size of chessboard squares in cm.
+  --calibration-folder CALIBRATION_FOLDER
+                        Folder to save camera calibration to.
